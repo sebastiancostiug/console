@@ -18,7 +18,6 @@
 
 namespace console;
 
-use bootstrap\foundation\App;
 use common\Collection;
 use console\components\Command;
 use console\components\Input;
@@ -26,6 +25,7 @@ use console\components\InputArgument;
 use console\components\Output;
 use console\interfaces\InputInterface;
 use console\interfaces\OutputInterface;
+use core\foundation\App;
 
 /**
  * Class Console

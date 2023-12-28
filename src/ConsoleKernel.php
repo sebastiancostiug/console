@@ -18,13 +18,13 @@
 
 namespace console;
 
-use bootstrap\foundation\bootstrappers\EnvironmentDetector;
-use bootstrap\foundation\bootstrappers\EnvironmentVariables;
-use bootstrap\foundation\bootstrappers\LoadConsoleEnvironment;
-use bootstrap\foundation\bootstrappers\ServiceProviders;
-use bootstrap\foundation\Kernel;
 use console\commands\CreateMigration;
 use console\commands\RunMigration;
+use core\bootstrap\EnvironmentDetector;
+use core\bootstrap\EnvironmentVariables;
+use core\bootstrap\LoadConsoleEnvironment;
+use core\bootstrap\ServiceProviders;
+use core\foundation\Kernel;
 
 /**
  * ConsoleKernel class
