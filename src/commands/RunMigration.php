@@ -16,7 +16,7 @@
  *
  */
 
-namespace core\console\commands;
+namespace seb\console\commands;
 
 use seb\common\Collection;
 use seb\console\components\Command;

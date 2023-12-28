@@ -16,7 +16,7 @@
  *
  */
 
-namespace core\console\commands;
+namespace seb\console\commands;
 
 use seb\console\components\Command;
 use seb\console\components\InputArgument;
@@ -48,7 +48,7 @@ class CreateMigration extends Command
     {
         $name          = $this->input->getArgument('name');
         $module        = $this->input->getArgument('module');
-        $path          = app_path(($module ? 'modules' . DIRECTORY_SEPARATOR . $module  . DIRECTORY_SEPARATOR: '') . 'migrations');
+        $path          = app_path(($module ? 'modules' . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR : '') . 'migrations');
         $migrationName = sprintf('m%s_%s', date('ymd_His'), $name);
 
         $migrationFile = $path . DIRECTORY_SEPARATOR . $migrationName . '.php';

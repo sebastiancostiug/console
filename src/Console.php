@@ -18,14 +18,14 @@
 
 namespace seb\console;
 
-use core\bootstrap\foundation\App;
-use core\components\Collection;
-use core\console\components\Command;
-use core\console\components\Input;
-use core\console\components\InputArgument;
-use core\console\components\Output;
-use core\console\interfaces\InputInterface;
-use core\console\interfaces\OutputInterface;
+use seb\bootstrap\foundation\App;
+use seb\common\Collection;
+use seb\console\components\Command;
+use seb\console\components\Input;
+use seb\console\components\InputArgument;
+use seb\console\components\Output;
+use seb\console\interfaces\InputInterface;
+use seb\console\interfaces\OutputInterface;
 
 /**
  * Class Console
@@ -173,7 +173,6 @@ class Console
         try {
             $this->handler();
         } catch (\Exception $e) {
-
         }
 
         return 0;

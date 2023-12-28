@@ -18,13 +18,13 @@
 
 namespace seb\console;
 
-use core\bootstrap\foundation\bootstrappers\EnvironmentDetector;
-use core\bootstrap\foundation\bootstrappers\EnvironmentVariables;
-use core\bootstrap\foundation\bootstrappers\LoadConsoleEnvironment;
-use core\bootstrap\foundation\bootstrappers\ServiceProviders;
-use core\bootstrap\foundation\Kernel;
-use core\console\commands\CreateMigration;
-use core\console\commands\RunMigration;
+use seb\bootstrap\foundation\bootstrappers\EnvironmentDetector;
+use seb\bootstrap\foundation\bootstrappers\EnvironmentVariables;
+use seb\bootstrap\foundation\bootstrappers\LoadConsoleEnvironment;
+use seb\bootstrap\foundation\bootstrappers\ServiceProviders;
+use seb\bootstrap\foundation\Kernel;
+use seb\console\commands\CreateMigration;
+use seb\console\commands\RunMigration;
 
 /**
  * ConsoleKernel class
@@ -50,9 +50,4 @@ class ConsoleKernel extends Kernel
         EnvironmentVariables::class,
         ServiceProviders::class,
     ];
-
-    public function loadBootstrappers($bootstrappers = []): void
-    {
-        $this->bootstrappers = $bootstrappers;
-    }
 }
