@@ -27,16 +27,31 @@ use console\components\Output;
  */
 class CreateMigration extends Command
 {
+    /**
+     * @var string $name The name of the command
+     */
     protected $name        = 'migration:create';
+    /**
+     * @var string $help The help of the command
+     */
     protected $help        = 'Create a new migration file';
+    /**
+     * @var string $description The description of the command
+     */
     protected $description = 'Create a new migration file';
 
+    /**
+     * Constructor for the CreateMigration command.
+     *
+     * @return void
+     */
     public function __construct()
     {
         parent::__construct();
 
         $this->addArgument('name', InputArgument::REQUIRED, 'The name of the migration');
         $this->addArgument('module', InputArgument::OPTIONAL, 'The name of the module');
+        $this->addArgument('template', InputArgument::OPTIONAL, 'The template to use');
     }
 
     /**
@@ -48,7 +63,7 @@ class CreateMigration extends Command
     {
         $name          = $this->input->getArgument('name');
         $module        = $this->input->getArgument('module');
-        $template      = $this->input->getOption('template');
+        $template      = $this->input->getArgument('template');
         $path          = app_path(($module ? 'modules' . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR : '') . 'migrations');
         $migrationName = sprintf('m%s_%s', date('ymd_His'), $name);
 
