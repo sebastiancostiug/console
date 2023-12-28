@@ -16,16 +16,16 @@
  *
  */
 
-namespace seb\console;
+namespace console;
 
-use seb\bootstrap\foundation\App;
-use seb\common\Collection;
-use seb\console\components\Command;
-use seb\console\components\Input;
-use seb\console\components\InputArgument;
-use seb\console\components\Output;
-use seb\console\interfaces\InputInterface;
-use seb\console\interfaces\OutputInterface;
+use bootstrap\foundation\App;
+use common\Collection;
+use console\components\Command;
+use console\components\Input;
+use console\components\InputArgument;
+use console\components\Output;
+use console\interfaces\InputInterface;
+use console\interfaces\OutputInterface;
 
 /**
  * Class Console

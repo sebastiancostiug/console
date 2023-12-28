@@ -24,6 +24,11 @@
         "sebastiancostiug/helpers": "dev-master",
         "sebastiancostiug/common": "dev-master"
     },
+    "autoload": {
+        "psr-4": {
+            "console\\": "src"
+        }
+    },
     "repositories": [
         {
             "type": "git",

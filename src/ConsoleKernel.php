@@ -16,15 +16,15 @@
  *
  */
 
-namespace seb\console;
+namespace console;
 
-use seb\bootstrap\foundation\bootstrappers\EnvironmentDetector;
-use seb\bootstrap\foundation\bootstrappers\EnvironmentVariables;
-use seb\bootstrap\foundation\bootstrappers\LoadConsoleEnvironment;
-use seb\bootstrap\foundation\bootstrappers\ServiceProviders;
-use seb\bootstrap\foundation\Kernel;
-use seb\console\commands\CreateMigration;
-use seb\console\commands\RunMigration;
+use bootstrap\foundation\bootstrappers\EnvironmentDetector;
+use bootstrap\foundation\bootstrappers\EnvironmentVariables;
+use bootstrap\foundation\bootstrappers\LoadConsoleEnvironment;
+use bootstrap\foundation\bootstrappers\ServiceProviders;
+use bootstrap\foundation\Kernel;
+use console\commands\CreateMigration;
+use console\commands\RunMigration;
 
 /**
  * ConsoleKernel class

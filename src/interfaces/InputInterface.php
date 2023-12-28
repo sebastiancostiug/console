@@ -16,7 +16,7 @@
  *
  */
 
-namespace seb\console\interfaces;
+namespace console\interfaces;
 
 /**
  * Represents an input interface for console commands.

@@ -16,7 +16,7 @@
  *
  */
 
-namespace seb\console\components;
+namespace console\components;
 
 /**
  * Represents a command line input argument.

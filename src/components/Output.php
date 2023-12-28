@@ -16,9 +16,9 @@
  *
  */
 
-namespace seb\console\components;
+namespace console\components;
 
-use seb\console\interfaces\OutputInterface;
+use console\interfaces\OutputInterface;
 
 /**
  * Class Output

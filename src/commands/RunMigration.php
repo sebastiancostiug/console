@@ -16,11 +16,11 @@
  *
  */
 
-namespace seb\console\commands;
+namespace console\commands;
 
-use seb\common\Collection;
-use seb\console\components\Command;
-use seb\console\components\InputArgument;
+use common\Collection;
+use console\components\Command;
+use console\components\InputArgument;
 
 /**
  * Migration class

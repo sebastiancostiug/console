@@ -16,10 +16,10 @@
  *
  */
 
-namespace seb\console\components;
+namespace console\components;
 
-use seb\console\Console;
-use seb\common\Collection;
+use console\Console;
+use common\Collection;
 
 /**
  * Class Command

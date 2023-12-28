@@ -12,8 +12,8 @@
  *
  */
 
-use seb\console\Console;
-use seb\console\ConsoleKernel;
+use console\Console;
+use console\ConsoleKernel;
 
 // Autoload global dependencies and allow for auto-loading local dependencies via use
 require_once 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';

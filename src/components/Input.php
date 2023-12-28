@@ -16,9 +16,9 @@
  *
  */
 
-namespace seb\console\components;
+namespace console\components;
 
-use seb\console\interfaces\InputInterface;
+use console\interfaces\InputInterface;
 
 /**
  * Class Input
