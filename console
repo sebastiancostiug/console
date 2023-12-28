@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+
+<?php
+/**
+ * @package     Console
+ *
+ * @subpackage  entrypoint
+ *
+ * @category    Console
+ *
+ * @since       2022.11.10
+ *
+ */
+
+use seb\console\Console;
+use seb\console\ConsoleKernel;
+
+// Autoload global dependencies and allow for auto-loading local dependencies via use
+require_once 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+
+// Require the app.php file to bootstrap the application.
+$app = require_once 'core' . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'app.php';
+
+// Resolve the console kernel instance.
+$kernel = $app->resolve(ConsoleKernel::class);
+
+// Boot up the application.
+$kernel->bootstrap();
+
+//Run the console application.
+$app->resolve(Console::class)->run();
