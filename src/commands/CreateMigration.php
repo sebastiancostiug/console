@@ -48,6 +48,7 @@ class CreateMigration extends Command
     {
         $name          = $this->input->getArgument('name');
         $module        = $this->input->getArgument('module');
+        $template      = $this->input->getOption('template');
         $path          = app_path(($module ? 'modules' . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR : '') . 'migrations');
         $migrationName = sprintf('m%s_%s', date('ymd_His'), $name);
 
@@ -57,7 +58,20 @@ class CreateMigration extends Command
             mkdir($path, 0777, true);
         }
 
-        $migrationTemplate = file_get_contents(core_path('database/MigrationTemplate.php'));
+        if (!empty($template)) {
+            $templateFile = resources_path('templates/migration/' . $template . '.php');
+        } else {
+            $templateFile = resources_path('templates/migration/basic.php');
+        }
+
+        if (!file_exists($templateFile)) {
+            $output = new Output;
+            $output->setDecorated(Output::TEXT_COLOR_RED);
+            $output->writeln('Migration template file not found.');
+            exit(1);
+        }
+
+        $migrationTemplate = file_get_contents($templateFile);
 
         $replacements = [
             '{{migration_name}}'  => $migrationName,
