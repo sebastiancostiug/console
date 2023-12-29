@@ -49,7 +49,7 @@ class CleanVendor extends Command
     {
         parent::__construct();
 
-        $this->addArgument('dryrun', InputArgument::REQUIRED, 'Dry run or not.');
+        $this->addArgument('dryrun', InputArgument::OPTIONAL, 'Dry run or not.');
     }
 
     /**
@@ -59,7 +59,8 @@ class CleanVendor extends Command
      */
     public function handler()
     {
-        $dryrun = $this->getArgument('dryrun') ?? false;
+        $dryrun = $this->input->getArgument('dryrun');
+        $dryrun = $dryrun === 'true' || $dryrun === '1' || $dryrun === 'yes' || $dryrun === 'y' || $dryrun === 'on';
 
         if ($dryrun) {
             $this->output->setDecorated(Output::TEXT_COLOR_GREEN);
