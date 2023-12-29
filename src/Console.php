@@ -285,7 +285,9 @@ class Console
         $maxNameLength = static::commands()->max(fn ($command) => strlen($command->getName()));
         $maxArgsLength = static::commands()->max(fn ($command) => strlen('{' . implode('} {', $command->getArguments()->keys()) . '}'));
 
-        return static::commands()->map(function ($command) use ($output, $maxNameLength, $maxArgsLength) {
+        return static::commands()->sort(function ($a, $b) {
+            return strcmp($a->getName(), $b->getName());
+        })->map(function ($command) use ($output, $maxNameLength, $maxArgsLength) {
             $output->setDecorated(Output::TEXT_COLOR_GREEN);
 
             $name = str_pad($command->getName(), $maxNameLength + 1);
