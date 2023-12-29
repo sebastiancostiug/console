@@ -16,10 +16,10 @@ use console\Console;
 use console\ConsoleKernel;
 
 // Autoload global dependencies and allow for auto-loading local dependencies via use
-require_once 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require_once dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'autoload.php';
 
 // Require the app.php file to bootstrap the application.
-$app = require_once 'core' . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'app.php';
+$app = require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'app.php';
 
 // Resolve the console kernel instance.
 $kernel = $app->resolve(ConsoleKernel::class);
@@ -28,4 +28,4 @@ $kernel = $app->resolve(ConsoleKernel::class);
 $kernel->bootstrap();
 
 //Run the console application.
-$app->resolve(Console::class)->run();
+return $app->resolve(Console::class);

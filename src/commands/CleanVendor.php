@@ -136,6 +136,16 @@ class CleanVendor extends Command
                         $removeFunction($fileinfo->getRealPath());
                     }
                 }
+
+                // Remove the directory itself
+                if ($dryrun) {
+                    $this->output->setDecorated(Output::TEXT_COLOR_YELLOW);
+                    $this->output->writeln('Would remove ' . $info->getRealPath());
+                } else {
+                    $this->output->setDecorated(Output::TEXT_COLOR_RED);
+                    $this->output->writeln('Removing ' . $info->getRealPath());
+                    rmdir($info->getRealPath());
+                }
             }
         }
 
