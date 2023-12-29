@@ -80,9 +80,8 @@ class CreateMigration extends Command
         }
 
         if (!file_exists($templateFile)) {
-            $output = new Output;
-            $output->setDecorated(Output::TEXT_COLOR_RED);
-            $output->writeln('Migration template file not found.');
+            $this->output->setDecorated(Output::TEXT_COLOR_RED);
+            $this->output->writeln('Migration template file not found.');
             exit(1);
         }
 
@@ -103,17 +102,15 @@ class CreateMigration extends Command
             $migrationTemplate = str_replace($placeholder, $replacement, $migrationTemplate);
         }
 
-        $output = new Output;
-
         if (file_put_contents($migrationFile, $migrationTemplate) === false) {
-            $output->setDecorated(Output::TEXT_COLOR_RED);
-            $output->writeln('Failed to create migration file.');
+            $this->output->setDecorated(Output::TEXT_COLOR_RED);
+            $this->output->writeln('Failed to create migration file.');
             exit(1);
         }
 
-        $output->setDecorated(Output::TEXT_COLOR_GREEN);
-        $output->writeln($migrationName . ' created successfully.');
-        $output->writeln('@location: ' . $path);
+        $this->output->setDecorated(Output::TEXT_COLOR_GREEN);
+        $this->output->writeln($migrationName . ' created successfully.');
+        $this->output->writeln('@location: ' . $path);
         exit(0);
     }
 }
