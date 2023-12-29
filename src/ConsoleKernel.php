@@ -36,10 +36,7 @@ class ConsoleKernel extends Kernel
      *
      * @var array
      */
-    public array $commands = [
-        CreateMigration::class,
-        RunMigration::class,
-    ];
+    public array $commands = [];
 
     /**
      * @var array $bootstrappers Register application bootstrap loaders
@@ -50,4 +47,18 @@ class ConsoleKernel extends Kernel
         EnvironmentVariables::class,
         ServiceProviders::class,
     ];
+
+    /**
+     * bootstrap()
+     *
+     * @return void
+     */
+    public function bootstrap()
+    {
+        $coreCommands   = classes_from_path(__DIR__ . DIRECTORY_SEPARATOR . 'commands');
+        $appCommands    = classes_from_path(app_path('commands'));
+        $this->commands = array_merge($this->commands, $coreCommands, $appCommands);
+
+        parent::bootstrap();
+    }
 }
