@@ -76,6 +76,7 @@ class CleanVendor extends Command
             'docs',
             'examples',
             'tests',
+            'test',
         ], $dryrun);
 
         extract($result1);
