@@ -23,22 +23,22 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
 /**
- * CleanVendor class
+ * CleanNodeModules class
  */
-class CleanVendor extends Command
+class CleanNodeModules extends Command
 {
     /**
      * @var string $name The name of the command
      */
-    protected $name        = 'service:clean-vendor';
+    protected $name        = 'service:clean-node-modules';
     /**
      * @var string $help The help of the command
      */
-    protected $help        = 'Clean vendor folder';
+    protected $help        = 'Clean node_modules folder';
     /**
      * @var string $description The description of the command
      */
-    protected $description = 'Clean vendor folder. Dry run shows what would be deleted without actually deleting it.';
+    protected $description = 'Clean node_modules folder. Dry run shows what would be deleted without actually deleting it.';
 
     /**
      * Constructor for the CleanVendor command.
@@ -67,11 +67,11 @@ class CleanVendor extends Command
             $this->output->writeln('Dry run enabled. No files will be deleted.');
         }
         $this->output->setDecorated(Output::TEXT_COLOR_RED);
-        $this->output->writeln('Cleaning vendor folder...');
+        $this->output->writeln('Cleaning node_modules folder...');
 
         $this->output->writeln('Removing folders...');
         $result1 = remove_dirs(
-            vendor_path(),
+            base_path('node_modules'),
             [
                 '.git',
                 '.github',
@@ -87,7 +87,7 @@ class CleanVendor extends Command
 
         $this->output->writeln('Removing files...');
         $result2 = remove_files(
-            vendor_path(),
+            base_path('node_modules'),
             [
                 '.gitignore',
                 '.gitattributes',
