@@ -1,6 +1,6 @@
 <?php
 /**
- * @package     Core
+ * @package     Console
  *
  * @subpackage  CleanVendor
  *
@@ -9,7 +9,6 @@
  * @license     https://opensource.org/licenses/BSD-3-Clause
  *
  * @category    commands
- * @see
  *
  * @since       2023-12-27
  */
@@ -19,8 +18,6 @@ namespace console\commands;
 use console\components\Command;
 use console\components\InputArgument;
 use console\components\Output;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 
 /**
  * CleanVendor class

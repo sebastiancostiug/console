@@ -1,19 +1,16 @@
 <?php
 /**
+ * @package     Console
  *
- * @package     slim-api-skeleton
- *
- * @subpackage  Console input
+ * @subpackage  Console output
  *
  * @author      Sebastian Costiug <sebastian@overbyte.dev>
  * @copyright   2019-2023 Sebastian Costiug
  * @license     https://opensource.org/licenses/BSD-3-Clause
  *
- * @category    slim-api-skeleton
- * @see
+ * @category    components
  *
  * @since       2023-12-01
- *
  */
 
 namespace console\components;

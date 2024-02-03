@@ -1,7 +1,6 @@
 <?php
 /**
- *
- * @package     slim-api-skeleton
+ * @package     Console
  *
  * @subpackage  ConsoleKernel
  *
@@ -9,11 +8,9 @@
  * @copyright   2019-2023 Sebastian Costiug
  * @license     https://opensource.org/licenses/BSD-3-Clause
  *
- * @category    slim-api-skeleton
- * @see
+ * @category    kernel
  *
  * @since       2023-12-02
- *
  */
 
 namespace console;

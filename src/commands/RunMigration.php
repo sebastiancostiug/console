@@ -1,7 +1,6 @@
 <?php
 /**
- *
- * @package     slim-api-skeleton
+ * @package     Console
  *
  * @subpackage  RunMigration
  *
@@ -9,11 +8,9 @@
  * @copyright   2019-2023 Sebastian Costiug
  * @license     https://opensource.org/licenses/BSD-3-Clause
  *
- * @category    slim-api-skeleton
- * @see
+ * @category    commands
  *
  * @since       2023-12-27
- *
  */
 
 namespace console\commands;

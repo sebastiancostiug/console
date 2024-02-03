@@ -1,15 +1,14 @@
 <?php
 /**
- * @package     Core
+ * @package     Console
  *
- * @subpackage  CleanVendor
+ * @subpackage  CleanNodeModules
  *
  * @author      Sebastian Costiug <sebastian@overbyte.dev>
  * @copyright   2019-2023 Sebastian Costiug
  * @license     https://opensource.org/licenses/BSD-3-Clause
  *
  * @category    commands
- * @see
  *
  * @since       2023-12-27
  */
@@ -19,8 +18,6 @@ namespace console\commands;
 use console\components\Command;
 use console\components\InputArgument;
 use console\components\Output;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 
 /**
  * CleanNodeModules class
