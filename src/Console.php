@@ -35,6 +35,7 @@ class Console
      * @var App $app The Slim application instance.
      */
     protected static $app;
+
     /**
      * The array of registered commands.
      *
