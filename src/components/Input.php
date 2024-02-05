@@ -58,7 +58,7 @@ class Input implements InputInterface
      */
     public function getArgument($name)
     {
-        throw_when(!array_key_exists($name, $this->arguments), "The {$name} argument does not exist.");
+        throw_when(!array_key_exists($name, $this->arguments), ["The {$name} argument does not exist."]);
 
         return $this->arguments[$name];
     }
@@ -74,7 +74,7 @@ class Input implements InputInterface
      */
     public function setArgument($name, mixed $value)
     {
-        throw_when(!array_key_exists($name, $this->arguments), "The {$name} argument does not exist.");
+        throw_when(!array_key_exists($name, $this->arguments), ["The {$name} argument does not exist."]);
 
         $this->arguments[$name] = $value;
     }
@@ -89,7 +89,7 @@ class Input implements InputInterface
      */
     public function getOption($name)
     {
-        throw_when(!array_key_exists($name, $this->options), "The {$name} option does not exist.");
+        throw_when(!array_key_exists($name, $this->options), ["The {$name} option does not exist."]);
 
         return $this->options[$name];
     }
@@ -105,7 +105,7 @@ class Input implements InputInterface
      */
     public function setOption($name, mixed $value)
     {
-        throw_when(!array_key_exists($name, $this->options), "The {$name} option does not exist.");
+        throw_when(!array_key_exists($name, $this->options), ["The {$name} option does not exist."]);
 
         $this->options[$name] = $value;
     }

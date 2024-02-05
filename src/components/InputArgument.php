@@ -68,7 +68,7 @@ class InputArgument
      */
     public function __construct($name, $mode = null, $description = '', mixed $default = null)
     {
-        throw_when((!is_int($mode) || $mode > 7 || $mode < 1), 'Argument mode "%s" is not valid.');
+        throw_when((!is_int($mode) || $mode > 7 || $mode < 1), ['Argument mode "%s" is not valid.']);
 
         if ($mode === null) {
             $mode = self::OPTIONAL;
@@ -144,10 +144,10 @@ class InputArgument
      */
     public function setDefault(mixed $default = null)
     {
-        throw_when((self::REQUIRED === $this->mode && null !== $default), 'Cannot set a default value except for InputArgument::OPTIONAL mode.');
+        throw_when((self::REQUIRED === $this->mode && null !== $default), ['Cannot set a default value except for InputArgument::OPTIONAL mode.']);
 
         if ($this->isArray()) {
-            throw_when((null !== $default && !is_array($default)), 'A default value for an array argument must be an array.');
+            throw_when((null !== $default && !is_array($default)), ['A default value for an array argument must be an array.']);
             if (null === $default) {
                 $default = [];
             }

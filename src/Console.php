@@ -154,7 +154,7 @@ class Console
      */
     public function __call($method, array $arguments)
     {
-        throw_when($method !== 'handler', "Method {$method} does not exist.");
+        throw_when($method !== 'handler', ["Method {$method} does not exist."]);
 
         call_user_func($this->handler, $arguments);
     }
