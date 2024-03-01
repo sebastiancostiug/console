@@ -90,9 +90,9 @@ class CreateMigration extends Command
             '{{namespace}}'       => $module ? 'modules\\' . $module . '\\migrations' : 'app\migrations',
             '{{date}}'            => date('Y-m-d'),
             '{{year}}'            => date('Y'),
-            '{{app_name}}'        => config('app.name') ?? '',
-            '{{developer_name}}'  => config('app.developer_name') ?? '',
-            '{{developer_email}}' => config('app.developer_email') ?? '',
+            '{{app_name}}'        => env('APP_NAME') ?? '',
+            '{{developer_name}}'  => env('APP_DEVELOPER_NAME') ?? '',
+            '{{developer_email}}' => env('APP_DEVELOPER_EMAIL') ?? '',
         ];
 
         foreach ($replacements as $placeholder => $replacement) {
